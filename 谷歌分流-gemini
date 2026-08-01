@@ -1,0 +1,11 @@
+# 谷歌分流
+# logtime: 2026-08-01
+
+
+DOMAIN-SUFFIX,blog.google
+DOMAIN-SUFFIX,googletraveladservices.com
+DOMAIN,clientservices.googleapis.com
+DOMAIN,update.googleapis.com
+DOMAIN,dl.google.com
+DOMAIN,dl.l.google.com
+DOMAIN,update.googleapis.com
