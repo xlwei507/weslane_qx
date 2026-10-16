@@ -1,9 +1,17 @@
+# 车来了去广告 - Quantumult X
+# 原作者：CaoXiaoMann
+# 原始规则：
+# https://raw.githubusercontent.com/CaoXiaoMann/XiaoMan/main/Scripts/CheLaiLe/CheLaiLe.sgmodule
+# 使用方式：合并到 QX 主配置对应分区
+
+
 [filter_local]
-# 车来了广告与埋点
+
+# > 车来了专用广告与埋点
 host, ad.chelaile.net.cn, reject
 host, atrace.chelaile.net.cn, reject
 
-# 第三方广告 SDK
+# > 第三方广告 SDK
 host-suffix, pangolin-sdk-toutiao.com, reject
 host-suffix, pangolin-sdk-toutiao1.com, reject
 host-suffix, pangolin-sdk-toutiao-b.com, reject
@@ -15,8 +23,10 @@ host, mi.gdt.qq.com, reject
 host, win.gdt.qq.com, reject
 host, pgdt.ugdtimg.com, reject
 
+
 [rewrite_local]
-# 广告配置、广告任务、开屏资源
+
+# > 车来了广告配置、广告任务、开屏资源
 ^https?:\/\/(api|cdn\.api)\.chelaile\.net\.cn\/goocity\/flowPos\/home\?.* url reject
 ^https?:\/\/(api|cdn\.api)\.chelaile\.net\.cn\/goocity\/flowPos\/listByPos\?.* url reject
 ^https?:\/\/(api|cdn\.api)\.chelaileapp\.cn\/goocity\/flowPos\/home\?.* url reject
@@ -29,24 +39,26 @@ host, pgdt.ugdtimg.com, reject
 ^https?:\/\/(api|cdn\.api)\.chelaileapp\.cn\/adpub\/.* url reject
 ^https?:\/\/pic1\.chelaile\.net\.cn\/adv\/.* url reject
 
-# 固定广告图片
+# > 固定广告图片
 ^https?:\/\/land\.yg84\.com\/jdl\/assets\/.*\.(?:jpe?g|png|webp).* url reject
 ^https?:\/\/image3\.chelaile\.net\.cn\/qb5ZXXzk\.png.* url reject
 
-# 广告落地页资源
+# > 广告落地页资源
 ^https?:\/\/land\.yg84\.com\/jdl\/.* url reject
 ^https?:\/\/quanyi\.yh-jiudian\.com\/activity8\/.* url reject
 
-# 活动广告
+# > 活动广告
 ^https?:\/\/[^\/]*chelaileapp\.cn\/goocity\/advert\/.* url reject
 ^https?:\/\/[^\/]*chelaileapp\.cn\/feserver\/vip-page\/images\/.* url reject
 ^https?:\/\/[^\/]*chelaile\.net\.cn\/goocity\/advert\/.* url reject
 ^https?:\/\/[^\/]*chelaile\.net\.cn\/feserver\/vip-page\/images\/.* url reject
 
-# 穿山甲、亿广、百度广告接口
+# > 穿山甲、亿广、百度广告接口
 ^https?:\/\/api-access\.pangolin-sdk-toutiao(?:1)?\.com\/api\/ad\/union\/sdk\/.* url reject
 ^https?:\/\/adx\.yg84\.com\/sdk\/ad\/.* url reject
 ^https?:\/\/mobads\.baidu\.com\/.* url reject
 
+
 [mitm]
-hostname = ad.chelaile.net.cn,atrace.chelaile.net.cn,api.chelaile.net.cn,cdn.api.chelaile.net.cn,cdn.api.chelaileapp.cn,web.chelaile.net.cn,image3.chelaile.net.cn,land.yg84.com,cdn.*.chelaileapp.cn,api.chelaileapp.cn,pic1.chelaile.net.cn,quanyi.yh-jiudian.com
+
+hostname = *.chelaile.net.cn, *.chelaileapp.cn, land.yg84.com, quanyi.yh-jiudian.com, api-access.pangolin-sdk-toutiao.com, api-access.pangolin-sdk-toutiao1.com, adx.yg84.com, mobads.baidu.com
